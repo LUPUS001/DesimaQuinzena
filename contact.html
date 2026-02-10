@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Contacte con Calvo & Garcia Abogados en Madrid. Teléfono, email y formulario de consulta. Primera visita gratuita.">
+    <title>Calvo & Garcia Abogados | Contacto</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Lato:wght@400;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+        }
+
+        @media (max-width: 768px) {
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        form {
+            background-color: var(--white);
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
+        }
+
+        input,
+        textarea,
+        select {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-family: inherit;
+        }
+
+        button[type="submit"] {
+            width: 100%;
+            border: none;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <div class="container">
+            <nav role="navigation">
+                <div class="logo">
+                    <a href="index.html">CALVO & GARCIA</a>
+                </div>
+                <ul class="nav-links">
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="about.html">Nosotros</a></li>
+                    <li><a href="services.html">Servicios</a></li>
+                    <li><a href="contact.html" class="active">Contacto</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <div class="breadcrumbs">
+            <div class="container">
+                <a href="index.html">Inicio</a> <span>/</span> Contacto
+            </div>
+        </div>
+
+        <section class="container">
+            <h1 class="section-title">Contáctenos</h1>
+            <p style="text-align: center; margin-bottom: 40px;">Estamos aquí para ayudarle. Cuéntenos su caso y le
+                responderemos en menos de 24 horas.</p>
+
+            <div class="contact-grid">
+                <div>
+                    <h2>Envíenos un mensaje</h2>
+                    <form action="#" method="post">
+                        <div class="form-group">
+                            <label for="nombre">Nombre Completo:</label>
+                            <input type="text" id="nombre" name="nombre" required placeholder="Su nombre">
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Correo Electrónico:</label>
+                            <input type="email" id="email" name="email" required placeholder="ejemplo@correo.com">
+                        </div>
+                        <div class="form-group">
+                            <label for="telefono">Teléfono:</label>
+                            <input type="tel" id="telefono" name="telefono" placeholder="Su teléfono de contacto">
+                        </div>
+                        <div class="form-group">
+                            <label for="motivo">Motivo de la consulta:</label>
+                            <select id="motivo" name="motivo">
+                                <option value="civil">Derecho Civil / Familia</option>
+                                <option value="penal">Derecho Penal</option>
+                                <option value="laboral">Derecho Laboral</option>
+                                <option value="mercantil">Derecho Mercantil</option>
+                                <option value="otro">Otros</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="mensaje">Mensaje:</label>
+                            <textarea id="mensaje" name="mensaje" rows="5" required
+                                placeholder="Describa brevemente su situación..."></textarea>
+                        </div>
+                        <div class="form-group">
+                            <input type="checkbox" id="privacidad" name="privacidad" required>
+                            <label for="privacidad" style="display: inline; font-weight: normal;">He leído y acepto la
+                                <a href="legal.html" style="text-decoration: underline;">política de
+                                    privacidad</a>.</label>
+                        </div>
+                        <button type="submit" class="btn">Enviar Consulta</button>
+                    </form>
+                </div>
+
+                <div>
+                    <h2>Información de Contacto</h2>
+                    <div style="background-color: var(--light-grey); padding: 30px; border-radius: 8px;">
+                        <p><strong>Dirección:</strong><br>
+                            Calle Mayor, 12, 1ºA<br>
+                            28013 Madrid, España</p>
+                        <br>
+                        <p><strong>Teléfono:</strong><br>
+                            <a href="tel:+34912345678" style="color: var(--primary-color);">91 234 56 78</a>
+                        </p>
+                        <br>
+                        <p><strong>Email:</strong><br>
+                            <a href="mailto:info@calvoygarcia.es"
+                                style="color: var(--primary-color);">info@calvoygarcia.es</a>
+                        </p>
+                        <br>
+                        <p><strong>Horario de Atención:</strong><br>
+                            Lunes a Jueves: 9:00 - 18:00<br>
+                            Viernes: 9:00 - 15:00</p>
+                    </div>
+
+                    <div
+                        style="margin-top: 30px; height: 300px; background-color: #eee; display: flex; align-items: center; justify-content: center; border-radius: 8px;">
+                        <span style="color: #666;">[Mapa de Google Maps Embebido]</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>Calvo & Garcia</h3>
+                    <p>Su despacho de confianza.</p>
+                </div>
+                <div class="footer-column">
+                    <h3>Enlaces Rápidos</h3>
+                    <ul>
+                        <li><a href="index.html">Inicio</a></li>
+                        <li><a href="about.html">Nosotros</a></li>
+                        <li><a href="services.html">Servicios</a></li>
+                        <li><a href="contact.html">Contacto</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Contacto</h3>
+                    <ul>
+                        <li>📍 Calle Mayor, 12, 1ºA, Madrid</li>
+                        <li>📧 info@calvoygarcia.es</li>
+                        <li>📞 91 234 56 78</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Calvo & Garcia Abogados. Todos los derechos reservados.</p>
+                <div style="margin-top: 10px;">
+                    <a href="legal.html">Aviso Legal</a> | <a href="legal.html#privacidad">Política de Privacidad</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+</body>
+
+</html>
