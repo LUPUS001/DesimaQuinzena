@@ -4,8 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description"
-        content="Contacte con Calvo & Garcia Abogados en Madrid. Teléfono, email y formulario de consulta. Primera visita gratuita.">
+    <meta name="description" content="Formulario de contacto de Calvo & Garcia Abogados. Consultas legales en Madrid.">
     <title>Calvo & Garcia Abogados | Contacto</title>
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Lato:wght@400;700&display=swap"
         rel="stylesheet">
@@ -15,6 +14,7 @@
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 40px;
+            margin-top: 20px;
         }
 
         @media (max-width: 768px) {
@@ -71,6 +71,11 @@
                     <li><a href="about.html">Nosotros</a></li>
                     <li><a href="services.html">Servicios</a></li>
                     <li><a href="contact.html" class="active">Contacto</a></li>
+                    <!-- Buscador Visual -->
+                    <li class="search-box">
+                        <input type="text" placeholder="Buscar...">
+                        <button type="button" aria-label="Buscar">🔍</button>
+                    </li>
                 </ul>
             </nav>
         </div>
@@ -85,8 +90,7 @@
 
         <section class="container">
             <h1 class="section-title">Contáctenos</h1>
-            <p style="text-align: center; margin-bottom: 40px;">Estamos aquí para ayudarle. Cuéntenos su caso y le
-                responderemos en menos de 24 horas.</p>
+            <p style="text-align: center; margin-bottom: 20px;">Estamos aquí para ayudarle. Cuéntenos su caso.</p>
 
             <div class="contact-grid">
                 <div>
@@ -119,11 +123,15 @@
                             <textarea id="mensaje" name="mensaje" rows="5" required
                                 placeholder="Describa brevemente su situación..."></textarea>
                         </div>
-                        <div class="form-group">
-                            <input type="checkbox" id="privacidad" name="privacidad" required>
-                            <label for="privacidad" style="display: inline; font-weight: normal;">He leído y acepto la
-                                <a href="legal.html" style="text-decoration: underline;">política de
-                                    privacidad</a>.</label>
+                        <!-- Checkbox GDPR Obligatorio -->
+                        <div class="form-group" style="display: flex; align-items: flex-start; gap: 10px;">
+                            <input type="checkbox" id="privacidad" name="privacidad" required
+                                style="width: auto; margin-top: 5px;">
+                            <label for="privacidad" style="display: inline; font-weight: normal; font-size: 0.9rem;">
+                                He leído y acepto la <a href="legal.html#privacidad"
+                                    style="text-decoration: underline; color: var(--secondary-color);">Política de
+                                    Privacidad</a> y consiento el tratamiento de mis datos.
+                            </label>
                         </div>
                         <button type="submit" class="btn">Enviar Consulta</button>
                     </form>
@@ -145,14 +153,13 @@
                                 style="color: var(--primary-color);">info@calvoygarcia.es</a>
                         </p>
                         <br>
-                        <p><strong>Horario de Atención:</strong><br>
-                            Lunes a Jueves: 9:00 - 18:00<br>
-                            Viernes: 9:00 - 15:00</p>
+                        <p><strong>Horario:</strong><br>
+                            L-J: 9:00 - 18:00 | V: 9:00 - 15:00</p>
                     </div>
 
                     <div
                         style="margin-top: 30px; height: 300px; background-color: #eee; display: flex; align-items: center; justify-content: center; border-radius: 8px;">
-                        <span style="color: #666;">[Mapa de Google Maps Embebido]</span>
+                        <span style="color: #666;">[Mapa Google Maps]</span>
                     </div>
                 </div>
             </div>
@@ -185,14 +192,35 @@
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2024 Calvo & Garcia Abogados. Todos los derechos reservados.</p>
+                <p>&copy; 2026 Calvo & Garcia Abogados. Todos los derechos reservados.</p>
                 <div style="margin-top: 10px;">
-                    <a href="legal.html">Aviso Legal</a> | <a href="legal.html#privacidad">Política de Privacidad</a>
+                    <a href="legal.html">Aviso Legal</a> | <a href="legal.html#privacidad">Política de Privacidad</a> |
+                    <a href="legal.html#cookies">Cookies</a>
                 </div>
             </div>
         </div>
     </footer>
 
+    <!-- Banner de Cookies -->
+    <div id="cookie-banner" class="cookie-banner">
+        <p>Utilizamos cookies propias y de terceros para mejorar su experiencia. <a href="legal.html#cookies">Más
+                información</a>.</p>
+        <button id="accept-cookies" class="btn btn-sm">Aceptar</button>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const banner = document.getElementById('cookie-banner');
+            const acceptBtn = document.getElementById('accept-cookies');
+            if (localStorage.getItem('cookiesAccepted') === 'true') {
+                banner.style.display = 'none';
+            }
+            acceptBtn.addEventListener('click', function () {
+                banner.style.display = 'none';
+                localStorage.setItem('cookiesAccepted', 'true');
+            });
+        });
+    </script>
 </body>
 
 </html>
