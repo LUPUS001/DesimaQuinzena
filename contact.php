@@ -1,3 +1,48 @@
+<?php
+// Incluir conexión a la BD
+require_once 'includes/db.php';
+
+$mensaje_estado = "";
+$clase_estado = "";
+
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    // Validar y sanitizar
+    $nombre = htmlspecialchars(trim($_POST['nombre']));
+    $email = filter_var(trim($_POST['email']), FILTER_SANITIZE_EMAIL);
+    $telefono = htmlspecialchars(trim($_POST['telefono']));
+    $motivo = htmlspecialchars(trim($_POST['motivo']));
+    $mensaje = htmlspecialchars(trim($_POST['mensaje']));
+
+    // Validar checkbox GDPR
+    if (!isset($_POST['privacidad'])) {
+        $mensaje_estado = "Debe aceptar la política de privacidad.";
+        $clase_estado = "error";
+    } elseif (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+        $mensaje_estado = "El email no es válido.";
+        $clase_estado = "error";
+    } else {
+        // Insertar en BD
+        try {
+            $sql = "INSERT INTO contactos (nombre, email, telefono, motivo, mensaje) VALUES (:nombre, :email, :telefono, :motivo, :mensaje)";
+            $stmt = $pdo->prepare($sql);
+            $stmt->execute([
+                ':nombre' => $nombre,
+                ':email' => $email,
+                ':telefono' => $telefono,
+                ':motivo' => $motivo,
+                ':mensaje' => $mensaje
+            ]);
+
+            $mensaje_estado = "¡Mensaje enviado con éxito! Nos pondremos en contacto pronto.";
+            $clase_estado = "success";
+        } catch (PDOException $e) {
+            $mensaje_estado = "Error al enviar el mensaje: " . $e->getMessage();
+            $clase_estado = "error";
+        }
+    }
+}
+?>
+
 <!DOCTYPE html>
 <html lang="es">
 
@@ -55,6 +100,25 @@
             border: none;
             cursor: pointer;
         }
+
+        .alert {
+            padding: 15px;
+            margin-bottom: 20px;
+            border-radius: 4px;
+            text-align: center;
+        }
+
+        .success {
+            background-color: #d4edda;
+            color: #155724;
+            border: 1px solid #c3e6cb;
+        }
+
+        .error {
+            background-color: #f8d7da;
+            color: #721c24;
+            border: 1px solid #f5c6cb;
+        }
     </style>
 </head>
 
@@ -70,7 +134,7 @@
                     <li><a href="index.html">Inicio</a></li>
                     <li><a href="about.html">Nosotros</a></li>
                     <li><a href="services.html">Servicios</a></li>
-                    <li><a href="contact.html" class="active">Contacto</a></li>
+                    <li><a href="contact.php" class="active">Contacto</a></li>
                     <!-- Buscador Visual -->
                     <li class="search-box">
                         <input type="text" placeholder="Buscar...">
@@ -92,10 +156,16 @@
             <h1 class="section-title">Contáctenos</h1>
             <p style="text-align: center; margin-bottom: 20px;">Estamos aquí para ayudarle. Cuéntenos su caso.</p>
 
+            <?php if ($mensaje_estado): ?>
+                <div class="alert <?php echo $clase_estado; ?>">
+                    <?php echo $mensaje_estado; ?>
+                </div>
+            <?php endif; ?>
+
             <div class="contact-grid">
                 <div>
                     <h2>Envíenos un mensaje</h2>
-                    <form action="#" method="post">
+                    <form action="contact.php" method="post">
                         <div class="form-group">
                             <label for="nombre">Nombre Completo:</label>
                             <input type="text" id="nombre" name="nombre" required placeholder="Su nombre">
@@ -179,7 +249,7 @@
                         <li><a href="index.html">Inicio</a></li>
                         <li><a href="about.html">Nosotros</a></li>
                         <li><a href="services.html">Servicios</a></li>
-                        <li><a href="contact.html">Contacto</a></li>
+                        <li><a href="contact.php">Contacto</a></li>
                     </ul>
                 </div>
                 <div class="footer-column">

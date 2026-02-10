@@ -47,9 +47,17 @@
 - **Alineación:** Contiene las palabras clave de marca y la actividad ("abogados"), fácil de recordar.
 
 ### 1.6 Estudio de Tecnologías
-- **Frontend:** HTML5 Semántico, CSS3 (Flexbox/Grid), JavaScript vainilla (ligero).
-- **Justificación:** No se requiere un framework pesado (React/Angular) para una web informativa estática. Garantiza máxima velocidad (SEO) y facilidad de mantenimiento.
-- **Alojamiento:** Hosting compartido o GitHub Pages (para portafolio).
+
+#### Frontend
+- **HTML5 Semántico:** Estructura limpia y accesible.
+- **CSS3:** Diseño Responsive mediante Flexbox y Grid, variables CSS para theming.
+- **JavaScript:** Lógica de banner de cookies y validaciones simples.
+
+#### Backend
+- **Lenguaje:** PHP 8 (Compatible con XAMPP).
+- **Base de Datos:** MySQL / MariaDB.
+- **Servidor Web:** Apache (vía XAMPP).
+- **Conectividad:** Uso de PDO para prevenir inyecciones SQL.
 
 ### 1.7 Guía de Estilo
 - **Colores:**
@@ -59,6 +67,16 @@
 - **Tipografía:**
   - Títulos: 'Cinzel' o 'Playfair Display' (Serif) - Tradicional y elegante.
   - Cuerpo: 'Lato' o 'Open Sans' (Sans-serif) - Legible y moderna.
+
+## 2. Instrucciones de Despliegue (XAMPP)
+
+1.  **Copiar Archivos:** Mover la carpeta del proyecto a `C:\xampp\htdocs\Decima`.
+2.  **Base de Datos:**
+    - Abrir `phpMyAdmin` (`http://localhost/phpmyadmin`).
+    - Importar el script `sql/database.sql` para crear la BD `calvoygarcia` y tablas.
+3.  **Configuración:** Verificar credenciales en `includes/db.php` (Usuario: `root`, Pass: vacío por defecto).
+4.  **Ejecución:** Abrir navegador en `http://localhost/Decima/index.html`.
+5.  **Panel Admin:** Acceder a `http://localhost/Decima/admin/login.php` (Usuario: `admin`, Pass: `admin`).
 
 ---
 **Nota sobre validación y cumplimiento:**
