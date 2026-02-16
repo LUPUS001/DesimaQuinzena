@@ -249,9 +249,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 <div class="footer-column">
                     <h3>Contacto</h3>
                     <ul>
-                        <li>📍 Calle Mayor, 12, 1ºA, Madrid</li>
+                        <li>📍 Calle Pintor Oliet, 12, 4ºD, Castellón</li>
                         <li>📧 info@calvoygarcia.es</li>
-                        <li>📞 91 234 56 78</li>
+                        <li>📞 964 12 34 56</li>
                     </ul>
                 </div>
             </div>
