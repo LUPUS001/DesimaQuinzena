@@ -135,11 +135,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     <li><a href="about.html">Nosotros</a></li>
                     <li><a href="services.html">Servicios</a></li>
                     <li><a href="contact.php" class="active">Contacto</a></li>
-                    <!-- Buscador Visual -->
-                    <li class="search-box">
-                        <input type="text" placeholder="Buscar...">
-                        <button type="button" aria-label="Buscar">🔍</button>
-                    </li>
                 </ul>
             </nav>
         </div>
