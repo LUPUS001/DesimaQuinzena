@@ -206,11 +206,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     <h2>Información de Contacto</h2>
                     <div style="background-color: var(--light-grey); padding: 30px; border-radius: 8px;">
                         <p><strong>Dirección:</strong><br>
-                            Calle Mayor, 12, 1ºA<br>
-                            28013 Madrid, España</p>
+                            Calle Pintor Oliet, 12, 4ºD<br>
+                            12006 Castellón de la Plana, España</p>
                         <br>
                         <p><strong>Teléfono:</strong><br>
-                            <a href="tel:+34912345678" style="color: var(--primary-color);">91 234 56 78</a>
+                            <a href="tel:+34964123456" style="color: var(--primary-color);">964 12 34 56</a>
                         </p>
                         <br>
                         <p><strong>Email:</strong><br>
@@ -222,9 +222,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                             L-J: 9:00 - 18:00 | V: 9:00 - 15:00</p>
                     </div>
 
-                    <div
-                        style="margin-top: 30px; height: 300px; background-color: #eee; display: flex; align-items: center; justify-content: center; border-radius: 8px;">
-                        <span style="color: #666;">[Mapa Google Maps]</span>
+                    <div style="margin-top: 30px;">
+                        <img src="img/mapa.png" alt="Ubicación en Castellón" style="width: 100%; height: auto; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
                     </div>
                 </div>
             </div>

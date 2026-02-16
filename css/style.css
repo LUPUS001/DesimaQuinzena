@@ -159,7 +159,7 @@ nav {
 
 /* Hero Section */
 .hero {
-    background: linear-gradient(rgba(0, 51, 102, 0.8), rgba(0, 51, 102, 0.8)), url('../img/office-bg.jpg');
+    background: linear-gradient(rgba(0, 51, 102, 0.8), rgba(0, 51, 102, 0.8)), url('../img/oficina-abogado.jpg');
     background-color: var(--primary-color);
     /* Fallback */
     background-size: cover;
